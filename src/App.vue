@@ -1,3 +1,9 @@
 <template>
-  <div>123</div>
+  <div>
+		<Modal title="Some title" />
+	</div>
 </template>
+
+<script setup>
+import Modal from './components/Modal.vue';
+</script>
