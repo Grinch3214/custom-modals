@@ -37,7 +37,7 @@ const props = defineProps({
 		transition: opacity .2s ease;
 		right: 0;
 		z-index: 998;
-		background-color: rgba(00,00,00,.48);
+		background-color: rgba(0,0,0,.48);
 	}
 
 	&__content {
