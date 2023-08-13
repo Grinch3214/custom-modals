@@ -6,3 +6,29 @@ body {
 	font-weight: 400;
 	font-size: 2rem;
 }
+
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	@media screen and (min-width: 1440px) {
+		max-width: 1630px;
+	}
+}
+
+.btn {
+	padding: 15px 25px;
+	text-transform: uppercase;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: .2s ease;
+
+	&--primary {
+		background: darkblue;
+		color: #fff;
+		&:hover {
+			background: rgb(1, 1, 121);
+		}
+	}
+}
