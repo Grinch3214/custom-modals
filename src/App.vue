@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 		<div class="m">
-			<button class="btn btn--primary" @click="modalFirst = true">Open modal</button>
+			<button class="btn btn--primary" @click="modalFirst = !modalFirst">Open modal</button>
 			<Modal v-if="modalFirst" title="Some title" />
 		</div>
 	</div>
