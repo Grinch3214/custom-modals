@@ -2,7 +2,7 @@
   <div class="container">
 		<div class="m">
 			<button class="btn btn--primary" @click="modalFirst = !modalFirst">Open modal</button>
-			<Modal v-if="modalFirst" title="Some title" />
+			<Modal v-if="modalFirst" title="Some title" @close="modalFirst = !modalFirst" />
 		</div>
 	</div>
 </template>
