@@ -1,10 +1,10 @@
 <template>
-    <div class="modal__wrapper">
-      <div class="modal__content">
+    <div class="modal__wrapper" @click="$emit('close')">
+      <div class="modal__content" @click.stop>
 
         <div class="modal__header">
           <span class="modal__title"> {{ title }} </span>
-          <span class="modal__close"></span>
+          <span class="modal__close" @click="$emit('close')"></span>
         </div>
 
         <div class="modal__body"></div>
@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
+const emits = defineEmits(['close'])
 const props = defineProps({
 	title: {
 		type: String,
