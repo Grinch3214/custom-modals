@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 const emits = defineEmits(['close'])
 const props = defineProps({
 	title: {
@@ -72,6 +72,7 @@ onMounted(() => {
 	}
 
 	&__title {
+		font-weight: 600;
 	}
 
 	&__close {
