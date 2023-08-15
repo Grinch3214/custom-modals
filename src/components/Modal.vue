@@ -1,5 +1,5 @@
 <template>
-    <div class="modal__wrapper" @click="$emit('close')">
+    <div class="modal" @click="$emit('close')">
       <div class="modal__content" @click.stop>
 
         <div class="modal__header">
@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 const emits = defineEmits(['close'])
 const props = defineProps({
 	title: {
@@ -20,26 +21,30 @@ const props = defineProps({
 		required: true
 	}
 })
+onMounted(() => {
+  document.body.addEventListener('keyup', e => {
+		if(e.key === 'Escape') {
+			emits('close')
+		}
+	})
+})
 </script>
 
 
 <style lang="scss" scoped>
 
 .modal {
-
-	&__wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		transition: opacity .2s ease;
-		right: 0;
-		z-index: 998;
-		background-color: rgba(0,0,0,.48);
-	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transition: opacity .2s ease;
+	right: 0;
+	z-index: 998;
+	background-color: rgba(0,0,0,.48);
 
 	&__content {
 		position: relative;
@@ -67,6 +72,7 @@ const props = defineProps({
 	}
 
 	&__title {
+		font-weight: 600;
 	}
 
 	&__close {
