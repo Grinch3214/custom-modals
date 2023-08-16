@@ -2,7 +2,13 @@
   <div class="container">
 		<div class="m">
 			<button class="btn btn--primary" @click="modalFirst = !modalFirst">Open modal</button>
-			<Modal v-if="modalFirst" title="Some title" @close="modalFirst = !modalFirst" />
+			<Modal v-if="modalFirst" title="Some title" @close="modalFirst = !modalFirst">
+				<template v-slot:body>
+					<div>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, et necessitatibus. Accusamus, earum sed non praesentium itaque dolore? Esse perferendis distinctio eos vitae deleniti ab, ad ea nemo enim dicta.
+					</div>
+				</template>
+			</Modal>
 		</div>
 	</div>
 </template>

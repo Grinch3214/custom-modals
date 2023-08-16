@@ -7,7 +7,9 @@
           <span class="modal__close" @click="$emit('close')"></span>
         </div>
 
-        <div class="modal__body"></div>
+        <div class="modal__body">
+					<slot name="body"></slot>
+				</div>
       </div>
     </div>
 </template>
