@@ -1,5 +1,6 @@
 <template>
-    <div class="modal" @click="$emit('close')">
+	<Transition name="modal-animation" appear>
+		<div class="modal" @click="$emit('close')">
       <div class="modal__content" @click.stop>
 
         <div class="modal__header">
@@ -12,6 +13,7 @@
 				</div>
       </div>
     </div>
+	</Transition>
 </template>
 
 <script setup>
@@ -31,6 +33,16 @@ onMounted(() => {
 	})
 })
 </script>
+
+<style>
+.modal-animation-enter-active, .modal-animation-leave-active {
+	opacity: 0;
+}
+.modal-animation-enter-active .modal__content,
+.modal-animation-leave-active .modal__content {
+	transform: scale(.5);
+}
+</style>
 
 
 <style lang="scss" scoped>
