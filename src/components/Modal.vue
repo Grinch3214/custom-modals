@@ -40,7 +40,7 @@ onMounted(() => {
 }
 .modal-animation-enter-active .modal__content,
 .modal-animation-leave-active .modal__content {
-	transform: scale(1.2);
+	transform: scale(.5);
 }
 </style>
 
