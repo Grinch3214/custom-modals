@@ -28,7 +28,6 @@ const props = defineProps({
 onMounted(() => {
   document.body.addEventListener('keyup', e => {
 		if(e.key === 'Escape') {
-			console.log(e.key)
 			emits('close')
 		}
 	})
