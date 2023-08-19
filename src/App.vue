@@ -26,15 +26,23 @@
 					</form>
 				</template>
 			</Modal>
+			
+			<button class="btn btn--primary" @click="modalValidate = true">Open modal with validate</button>
+			<ModalValidate v-show="modalValidate" @close="modalValidate">
+
+			</ModalValidate>
+
 		</div>
 	</div>
 </template>
 
 <script setup>
-import Modal from './components/Modal.vue';
-import { ref } from 'vue';
+import Modal from './components/Modal.vue'
+import ModalValidate from './components/ModalValidate.vue'
+import { ref } from 'vue'
 
 const modalFirst = ref(false)
+const modalValidate = ref(false)
 const modalSecond = ref({
 	show: false,
 	name: '',
