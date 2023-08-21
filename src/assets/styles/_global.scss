@@ -69,5 +69,12 @@ body {
 		&:focus {
 			box-shadow: 0 0 0 2px rgb(1, 1, 94);
 		}
+
+		&--error {
+			box-shadow: 0 0 0 2px rgb(161, 0, 0);
+			&:focus {
+				box-shadow: 0 0 0 2px rgb(161, 0, 0);
+			}
+		}
 	}
 }
