@@ -4,11 +4,22 @@
 			<form @submit.prevent="sendSecondForm">
 				<div class="input-group">
 					<label class="input-group__label">Name</label>
-					<input class="input-group__input" type="text" v-model="formData.name">
+					<input
+					  v-model="formData.name"
+					  :class="{ 'input-group__input--error': v$.name.$error }"
+					  class="input-group__input"
+					  type="text"
+					>
 				</div>
 				<div class="input-group">
+					{{ v$.email }}
 					<label class="input-group__label">Email</label>
-					<input class="input-group__input" type="text" v-model="formData.email">
+					<input
+					  v-model="formData.email"
+					  :class="{ 'input-group__input--error': v$.email.$error }"
+					  class="input-group__input"
+					  type="text"
+					>
 				</div>
 				<button class="btn btn--secondary">Send form</button>
 			</form>
@@ -46,7 +57,8 @@ const sendSecondForm = () => {
 		console.log({
 		name: formData.value.name,
 		email: formData.value.email
-	})
+	}),
+	v$.value.$reset()
 	} else {
 		console.log('Not Valid')
 	}
