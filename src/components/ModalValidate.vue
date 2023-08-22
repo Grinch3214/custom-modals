@@ -12,7 +12,6 @@
 					>
 				</div>
 				<div class="input-group">
-					{{ v$.email }}
 					<label class="input-group__label">Email</label>
 					<input
 					  v-model="formData.email"
