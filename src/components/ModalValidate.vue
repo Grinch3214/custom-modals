@@ -54,14 +54,18 @@ const v$ = useVuelidate(rules, formData)
 
 const sendSecondForm = () => {
 	v$.value.$validate()
-	console.log(v$.value.$error)
 	if(!v$.value.$error) {
-		console.log('Valid')
-		console.log({
-		name: formData.value.name,
-		email: formData.value.email
-	}),
-	v$.value.$reset()
+		const user = {
+			name: formData.value.name,
+			email: formData.value.email
+		}
+		console.log(user)
+
+		formData.value.name = ''
+		formData.value.email = ''
+
+		v$.value.$reset()
+		emits('close')
 	} else {
 		console.log('Not Valid')
 	}
