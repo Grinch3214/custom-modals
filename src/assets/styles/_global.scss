@@ -45,7 +45,12 @@ body {
 }
 
 .input-group {
-	padding: 10px 0;
+	padding: 10px 0 20px;
+	position: relative;
+
+	&.last-child {
+		margin-bottom: 20px;
+	}
 
 	&__label {
 		font-size: 2rem;
@@ -76,5 +81,13 @@ body {
 				box-shadow: 0 0 0 2px rgb(161, 0, 0);
 			}
 		}
+	}
+	
+	&__error {
+		position: absolute;
+		font-size: 1.2rem;
+		color: rgb(161, 0, 0);
+		bottom: 0;
+		left: 10px;
 	}
 }
