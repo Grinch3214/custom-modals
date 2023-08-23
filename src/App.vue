@@ -28,7 +28,7 @@
 			</Modal>
 			
 			<button class="btn btn--primary" @click="modalValidate = true">Open modal with validate</button>
-			<ModalValidate v-show="modalValidate" @close="modalValidate">
+			<ModalValidate v-show="modalValidate" @close="modalValidate = false">
 
 			</ModalValidate>
 
