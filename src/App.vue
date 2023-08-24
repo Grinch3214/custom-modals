@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-		<div class="m">
+		<div class="mt-25">
 			<button class="btn btn--primary" @click="modalFirst = true">Open modal</button>
 			<Modal v-show="modalFirst" title="Some title" @close="modalFirst = false">
 				<template v-slot:body>
@@ -88,7 +88,7 @@ const sendSecondForm = () => {
 </style>
 
 <style lang="scss" scoped>
-	.m {
+	.mt-25 {
 		margin-top: 25px;
 	}
 </style>
